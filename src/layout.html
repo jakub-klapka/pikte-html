@@ -25,32 +25,61 @@
 </head>
 <body>
 
-<header class="main_header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+<header class="main_header menu_open" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 	<div class="width_wrap">
 
 		<a class="main_header__logo" href="" itemtype="name url">
-			logo
+			<svg class="main_header__logo__image"><use xlink:href="#svg-logo"></use></svg>
 		</a>
 
-		<nav class="main_header__nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-			<ul class="main_header__nav__ul">
-				<li class="main_header__nav__ul__item"><a href="">Naše práce</a></li>
-				<li class="main_header__nav__ul__item is-active"><a href="">Portfolio</a></li>
-				<li class="main_header__nav__ul__item"><a href="">Obchod</a></li>
-				<li class="main_header__nav__ul__item"><a href="">Na zakázku</a></li>
-				<li class="main_header__nav__ul__item"><a href="">O nás</a></li>
-			</ul>
-		</nav>
+		<div class="main_header__menu_section" id="main_menu">
+			<nav class="main_header__menu_section__nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+				<ul class="main_header__menu_section__nav__ul">
+					<li class="main_header__menu_section__nav__ul__item"><a href=""><span>Naše práce</span></a></li>
+					<li class="main_header__menu_section__nav__ul__item is-active"><a href=""><span>Portfolio</span></a></li>
+					<li class="main_header__menu_section__nav__ul__item"><a href=""><span>Obchod</span></a></li>
+					<li class="main_header__menu_section__nav__ul__item"><a href=""><span>Na zakázku</span></a></li>
+					<li class="main_header__menu_section__nav__ul__item"><a href=""><span>O nás</span></a></li>
+				</ul>
+			</nav>
 
-		<div class="main_header__cart_info">
-			<div class="main_header__cart_info__icon">
-				<svg><use xlink:href="#svg-shopping_cart"></use></svg>
-			</div>
-			<div class="main_header__cart_info__text">2ks / 1 234 Kč</div>
+			<a href="" class="main_header__menu_section__cart_info">
+				<svg class="main_header__menu_section__cart_info__icon"><use xlink:href="#svg-shopping_cart"></use></svg>
+				<div class="main_header__menu_section__cart_info__text">2ks / 1 234 Kč</div>
+			</a>
 		</div>
+
+
+		<button class="main_header__menu_button" aria-controls="main_menu">
+			<svg><use xlink:href="#svg-menu"></use></svg>
+		</button>
+
 
 	</div>
 </header>
 
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad autem consequatur dolore inventore iure, laboriosam
+	laborum, officiis quae qui quo velit veniam voluptas! A animi commodi debitis dolore, fugit ullam?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad autem consequatur dolore inventore iure, laboriosam
+	laborum, officiis quae qui quo velit veniam voluptas! A animi commodi debitis dolore, fugit ullam?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad autem consequatur dolore inventore iure, laboriosam
+	laborum, officiis quae qui quo velit veniam voluptas! A animi commodi debitis dolore, fugit ullam?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad autem consequatur dolore inventore iure, laboriosam
+	laborum, officiis quae qui quo velit veniam voluptas! A animi commodi debitis dolore, fugit ullam?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad autem consequatur dolore inventore iure, laboriosam
+	laborum, officiis quae qui quo velit veniam voluptas! A animi commodi debitis dolore, fugit ullam?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad autem consequatur dolore inventore iure, laboriosam
+	laborum, officiis quae qui quo velit veniam voluptas! A animi commodi debitis dolore, fugit ullam?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad autem consequatur dolore inventore iure, laboriosam
+	laborum, officiis quae qui quo velit veniam voluptas! A animi commodi debitis dolore, fugit ullam?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad autem consequatur dolore inventore iure, laboriosam
+	laborum, officiis quae qui quo velit veniam voluptas! A animi commodi debitis dolore, fugit ullam?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad autem consequatur dolore inventore iure, laboriosam
+	laborum, officiis quae qui quo velit veniam voluptas! A animi commodi debitis dolore, fugit ullam?</p>
+
+
+<script src="js/libs/jquery-2.1.3.js"></script>
+<script src="js/libs/velocity.js"></script>
+<script src="js/mobile_menu.js"></script> <!-- jq -->
 </body>
 </html>

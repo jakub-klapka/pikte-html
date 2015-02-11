@@ -27,6 +27,11 @@ Layout
 .width_wrap {
 	max-width: $page_max_width;
 	margin: 0 auto;
+
+		@include respond_to( 'max-width', $page_max_width + $side_gutter ){
+			padding-left: $side_gutter;
+			padding-right: $side_gutter;
+		};
 }
 
 

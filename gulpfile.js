@@ -62,7 +62,7 @@ gulp.task( 'svg', function(){
 
 } );
 gulp.task( 'svg_watch', function(){
-	gulp.watch( 'src/svg_sprite/**/*', [ 'svg' ] );
+	gulp.watch( 'src/svg/**/*', [ 'svg' ] );
 } );
 
 

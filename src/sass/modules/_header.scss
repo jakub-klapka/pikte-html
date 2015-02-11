@@ -8,47 +8,181 @@
 			align-items: center;
 			justify-content: space-around;
 			height: $desktop_header_height;
-		}
+			position: relative;
+
+				}
+				&.menu_wrapped .width_wrap {
+					justify-content: space-between;
+				}
 
 		&__logo {
 			flex: 0 0 auto;
-		}
 
-
-		&__nav {
-			flex: 1 0 auto;
-			height: 80%;
-
-				&__ul {
-					$items_gutter: 25px;
-					display: flex;
-					justify-content: flex-end;
-					height: 100%;
-					padding-right: $items_gutter;
-
-						&__item {
-							height: 100%;
-
-								a {
-									display: flex;
-									align-items: center;
-									height: 100%;
-									font-size: 14px;
-									text-decoration: none;
-									padding: 0 $items_gutter;
-									color: $base_text_color;
-									text-transform: uppercase;
-								}
-
-								&.is-active a {
-									font-weight: bold;
-								}
-						}
+				&__image {
+					display: block;
+					color: $base_text_color;
+					$image_ratio: 3.29;
+					$width: 144px;
+					width: $width;
+					height: ( $width / $image_ratio );
 				}
 		}
 
-		&__cart_info {
+		&__menu_section {
+			display: flex;
+			flex: 1 0 auto;
+			height: 80%;
+
+				.menu_wrapped & {
+					display: none;
+					position: absolute;
+					top: 0;
+					right: 0;
+					left: 0;
+					flex-direction: column;
+					align-items: flex-end;
+					height: auto;
+					padding: 20px;
+					padding-right: 120px;
+					background: $body_bg;
+					z-index: 10;
+				}
+
+				&__nav {
+					flex: 1 0 auto;
+					display: flex;
+					justify-content: flex-end;
+					height: 100%;
+
+						&__ul {
+							$items_gutter: 25px;
+							display: flex;
+							width: auto;
+							height: 100%;
+							padding-right: $items_gutter;
+
+								.menu_wrapped & {
+									flex-direction: column;
+									padding-right: 0;
+								}
+
+								&__item {
+									height: 100%;
+
+										a {
+											display: flex;
+											align-items: center;
+											height: 100%;
+											font-size: 14px;
+											text-decoration: none;
+											padding: 0 $items_gutter;
+											color: $base_text_color;
+											text-transform: uppercase;
+
+												.menu_wrapped & {
+													justify-content: flex-end;
+													padding: 10px 0;
+												}
+
+												//Underlining:
+												span {
+													position: relative;
+
+														&::after {
+															content: '';
+															position: absolute;
+															left: 0;
+															right: 0;
+															bottom: 1px;
+															display: block;
+															height: 1px;
+															border-bottom: 1px solid transparent;
+															transition: border-color 300ms;
+														}
+												}
+
+												&:hover span::after {
+													border-bottom-color: $base_text_color;
+												}
+
+										}
+
+										&.is-active a {
+											font-weight: bold;
+										}
+								}
+						}
+				}
+
+				&__cart_info {
+					flex: 0 0 auto;
+					height: 100%;
+					display: flex;
+					align-items: center;
+					color: $highlight_color;
+					text-decoration: none;
+
+						.menu_wrapped & {
+							padding-top: 10px;
+						}
+
+						&__icon {
+							display: inline-block;
+							vertical-align: middle;
+							width: 20px;
+							height: 20px;
+							margin-right: 10px;
+						}
+
+						&__text {
+							display: inline-block;
+							vertical-align: middle;
+							font-weight: bold;
+
+								.menu_wrapped & {
+									color: $base_text_color;
+									font-weight: normal;
+									font-size: 14px;
+								}
+						}
+				}
+
+		}
+
+		&__menu_button {
 			flex: 0 0 auto;
+			padding: 0 20px;
+			display: none;
+			justify-content: flex-end;
+			height: 80%;
+
+			margin: 0;
+			background: none;
+			border: none;
+			border-radius: 0;
+			z-index: 20;
+			transition: color 200ms;
+
+				.menu_wrapped & {
+					display: flex;
+				}
+
+				svg {
+					display: block;
+					$size: 32px;
+					width: $size;
+					height: $size;
+				}
+
+				&:active,
+				&:focus {
+					outline: none;
+				}
+
+				&.is-active {
+					color: $highlight_color;
+				}
+
 		}
 
 
