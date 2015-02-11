@@ -19,6 +19,7 @@
 		bindEvents: function() {
 
 			this.checkForWrap();
+			$( window ).on( 'load', $.proxy( this.checkForWrap, this ) );
 
 			$( window ).on( 'resize', $.proxy( this.checkForWrap, this ) );
 
