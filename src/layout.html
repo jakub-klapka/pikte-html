@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="cs">
+<head>
+	<meta charset="UTF-8">
+	<title>PIKTE</title>
+
+	<!-- https://www.google.com/fonts#UsePlace:use/Collection:Open+Sans:400italic,700italic,400,700 -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="../dist/css/layout.css"/>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script>
+		var ajax = new XMLHttpRequest();
+		ajax.open("GET", "../dist/images/svg_layout.svg", true);
+		ajax.send();
+		ajax.onload = function(e) {
+			var div = document.createElement("div");
+			div.style.display = 'none';
+			div.innerHTML = ajax.responseText;
+			document.body.insertBefore(div, document.body.childNodes[0]);
+		}
+	</script>
+
+</head>
+<body>
+
+<header class="main_header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+	<div class="width_wrap">
+
+		<a class="main_header__logo" href="" itemtype="name url">
+			logo
+		</a>
+
+		<nav class="main_header__nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+			<ul class="main_header__nav__ul">
+				<li class="main_header__nav__ul__item"><a href="">Naše práce</a></li>
+				<li class="main_header__nav__ul__item is-active"><a href="">Portfolio</a></li>
+				<li class="main_header__nav__ul__item"><a href="">Obchod</a></li>
+				<li class="main_header__nav__ul__item"><a href="">Na zakázku</a></li>
+				<li class="main_header__nav__ul__item"><a href="">O nás</a></li>
+			</ul>
+		</nav>
+
+		<div class="main_header__cart_info">
+			<div class="main_header__cart_info__icon">
+				<svg><use xlink:href="#svg-shopping_cart"></use></svg>
+			</div>
+			<div class="main_header__cart_info__text">2ks / 1 234 Kč</div>
+		</div>
+
+	</div>
+</header>
+
+</body>
+</html>

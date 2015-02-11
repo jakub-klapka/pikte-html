@@ -1,0 +1,55 @@
+@import "../global";
+
+.main_header {
+	border-bottom: 1px solid $separator_color;
+
+		.width_wrap {
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+			height: $desktop_header_height;
+		}
+
+		&__logo {
+			flex: 0 0 auto;
+		}
+
+
+		&__nav {
+			flex: 1 0 auto;
+			height: 80%;
+
+				&__ul {
+					$items_gutter: 25px;
+					display: flex;
+					justify-content: flex-end;
+					height: 100%;
+					padding-right: $items_gutter;
+
+						&__item {
+							height: 100%;
+
+								a {
+									display: flex;
+									align-items: center;
+									height: 100%;
+									font-size: 14px;
+									text-decoration: none;
+									padding: 0 $items_gutter;
+									color: $base_text_color;
+									text-transform: uppercase;
+								}
+
+								&.is-active a {
+									font-weight: bold;
+								}
+						}
+				}
+		}
+
+		&__cart_info {
+			flex: 0 0 auto;
+		}
+
+
+}

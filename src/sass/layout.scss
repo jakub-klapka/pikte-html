@@ -1,0 +1,33 @@
+@import "global";
+
+/*
+Resets
+*/
+@import "libs/normalize";
+
+nav ul, nav ul li {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+
+/*
+Layout
+*/
+@import "modules/typo";
+
+.width_wrap {
+	max-width: $page_max_width;
+	margin: 0 auto;
+}
+
+
+@import "modules/header";

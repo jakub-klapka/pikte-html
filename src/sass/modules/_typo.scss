@@ -1,0 +1,18 @@
+@import "../global";
+
+body {
+	background: $body_bg;
+	font-size: $base_font_size;
+	line-height: $base_line_height;
+	font-family: $base_font;
+	color: $base_text_color;
+}
+
+a {
+	color: $highlight_color;
+	transition: color 300ms;
+
+		&:hover {
+			color: $highlight_hover_color;
+		}
+}
