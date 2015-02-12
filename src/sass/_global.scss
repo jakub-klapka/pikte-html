@@ -17,6 +17,10 @@ $footer_text_color: #f7f6f5;
 $base_text_color: #202020;
 $highlight_color: #00bfc0;
 $highlight_hover_color: darken( $highlight_color, 10% );
+$menu_over_image_bg: rgba( 0,0,0, 0.3 );
+$menu_over_image_border: darken( $separator_color, 50% );
+$yellow_highlight: #ffc926;
+$red_highlight: #ff5c26;
 
 
 /*
@@ -28,4 +32,22 @@ Mixins
 			@content;
 		}
 	}
+	@else if( $key == 'min-width' ) {
+		@media only screen and ( min-width: $value ) {
+			@content;
+		}
+	}
+	@else if( $key == 'home_text_wrap' ) {
+		@media only screen and ( max-width: 780px) {
+			@content;
+		}
+	}
+	@else if( $key == 'home_text_wrap_rev' ) {
+		@media only screen and ( min-width: 781px) {
+			@content;
+		}
+	}
+
+
+
 };

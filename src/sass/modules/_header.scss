@@ -1,7 +1,23 @@
 @import "../global";
 
+body {
+	position: relative;
+}
+
 .main_header {
 	border-bottom: 1px solid $separator_color;
+	color: $base_text_color;
+
+		&.is-underflowed {
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			z-index: 50;
+			background: $menu_over_image_bg;
+			color: $body_bg;
+			border-bottom-color: $menu_over_image_border;
+		}
 
 		.width_wrap {
 			display: flex;
@@ -25,6 +41,10 @@
 					$width: 144px;
 					width: $width;
 					height: ( $width / $image_ratio );
+
+						.is-underflowed & {
+							color: $body_bg;
+						}
 				}
 		}
 
@@ -47,7 +67,10 @@
 					background: $body_bg;
 					z-index: 10;
 					border-bottom: 1px solid $separator_color;
-				}
+					}
+						.is-underflowed.menu_wrapped & {
+							background: rgba( 0,0,0, 0.9 );
+						}
 
 				&__nav {
 					flex: 1 0 auto;
@@ -89,6 +112,10 @@
 											color: $base_text_color;
 											text-transform: uppercase;
 
+												.is-underflowed & {
+													color: $body_bg;
+												}
+
 												.menu_wrapped & {
 													justify-content: flex-end;
 													padding: 10px 0;
@@ -113,6 +140,10 @@
 
 												&:hover span::after {
 													border-bottom-color: $base_text_color;
+
+														.is-underflowed & {
+															border-bottom-color: $body_bg;
+														}
 												}
 
 										}
@@ -131,6 +162,14 @@
 					align-items: center;
 					color: $highlight_color;
 					text-decoration: none;
+
+						.is-underflowed & {
+							color: $body_bg;
+
+								&:hover {
+									color: $highlight_color;
+								}
+						}
 
 						.menu_wrapped & {
 							padding-top: 10px;
@@ -154,6 +193,9 @@
 									color: $base_text_color;
 									font-weight: normal;
 									font-size: 14px;
+								}
+								.is-underflowed.menu_wrapped & {
+									color: inherit;
 								}
 						}
 				}
@@ -195,6 +237,7 @@
 				}
 
 		}
+
 
 
 }

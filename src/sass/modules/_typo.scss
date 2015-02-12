@@ -22,18 +22,20 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, q {
 }
 
 h1 {
-	font-size: 24px;
-	text-transform: uppercase;
-	text-align: center;
+	font-weight: 300;
+	font-size: 30px;
+	color: $highlight_color;
 }
 
 h2 {
-	font-size: inherit;
-	text-align: center;
+	font-weight: 300;
+	font-size: 24px;
+	color: $highlight_color;
 }
 
 h3, h4, h5, h6 {
-	font-size: inherit;
+	font-weight: 300;
+	font-size: 22px;
 }
 
 p {
@@ -58,7 +60,7 @@ blockquote {
 	text-transform: uppercase;
 	text-decoration: none;
 	font-size: 14px;
-	transition-property: background-color, color;
+	transition-property: background-color, color, border-color;
 	transition-duration: 200ms;
 
 		&:hover {
@@ -73,7 +75,56 @@ blockquote {
 		&.is-small {
 			line-height: $base_line_height;
 		}
+
+		&.is-inverted {
+			color: $body_bg;
+			background: $highlight_color;
+
+				&:hover {
+					background: darken( $highlight_color, 20% );
+					border-color: darken( $highlight_color, 20% );
+				}
+		}
 }
+
+
+.is-yellow {
+
+	h1 {
+		color: $yellow_highlight;
+	}
+
+	.button {
+		color: $yellow_highlight;
+		border-color: $yellow_highlight;
+
+			&:hover {
+				color: $body_bg;
+				background-color: $yellow_highlight;
+			}
+	}
+
+}
+
+.is-red {
+
+	h1 {
+		color: $red_highlight;
+	}
+
+	.button {
+		color: $red_highlight;
+		border-color: $red_highlight;
+
+			&:hover {
+				color: $body_bg;
+				background-color: $red_highlight;
+			}
+	}
+
+}
+
+
 
 /*
 WP core
