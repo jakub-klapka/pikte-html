@@ -55,6 +55,10 @@
 					justify-content: flex-end;
 					height: 100%;
 
+						.menu_wrapped & {
+							height: auto;
+						}
+
 						&__ul {
 							$items_gutter: 25px;
 							display: flex;
@@ -65,10 +69,15 @@
 								.menu_wrapped & {
 									flex-direction: column;
 									padding-right: 0;
+									height: auto;
 								}
 
 								&__item {
 									height: 100%;
+
+										.menu_wrapped & {
+											height: auto;
+										}
 
 										a {
 											display: flex;
@@ -125,6 +134,7 @@
 
 						.menu_wrapped & {
 							padding-top: 10px;
+							height: auto;
 						}
 
 						&__icon {

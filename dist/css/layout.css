@@ -723,6 +723,9 @@ Mixins
           justify-content: flex-end;
   height: 100%;
 }
+.menu_wrapped .main_header__menu_section__nav {
+  height: auto;
+}
 .main_header__menu_section__nav__ul {
   display: -webkit-box;
   display: -webkit-flex;
@@ -739,9 +742,13 @@ Mixins
       -ms-flex-direction: column;
           flex-direction: column;
   padding-right: 0;
+  height: auto;
 }
 .main_header__menu_section__nav__ul__item {
   height: 100%;
+}
+.menu_wrapped .main_header__menu_section__nav__ul__item {
+  height: auto;
 }
 .main_header__menu_section__nav__ul__item a {
   display: -webkit-box;
@@ -806,6 +813,7 @@ Mixins
 }
 .menu_wrapped .main_header__menu_section__cart_info {
   padding-top: 10px;
+  height: auto;
 }
 .main_header__menu_section__cart_info__icon {
   display: inline-block;
@@ -941,6 +949,9 @@ Mixins
   display: inline-block;
   vertical-align: middle;
   margin-right: 40px;
+}
+.main_footer__copy__contact__fb span {
+  vertical-align: middle !important;
 }
 .main_footer__copy__contact__mail {
   display: inline-block;

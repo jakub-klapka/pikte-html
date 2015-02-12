@@ -49,6 +49,10 @@
 							display: inline-block;
 							vertical-align: middle;
 							margin-right: 40px;
+
+								span {
+									vertical-align: middle !important; //FB box overwrite
+								}
 						}
 
 						&__mail {
