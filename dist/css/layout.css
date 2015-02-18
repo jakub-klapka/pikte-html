@@ -514,6 +514,14 @@ blockquote {
   background: #005a5a;
   border-color: #005a5a;
 }
+.button.is-important {
+  color: #78c573;
+  border-color: #78c573;
+}
+.button.is-important:hover {
+  color: #FFF;
+  background-color: #78c573;
+}
 
 .is-yellow h1 {
   color: #ffc926;

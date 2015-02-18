@@ -9,6 +9,7 @@
 
 .products_slider {
 	margin: ( $base_line_height * 2 ) 0;
+	position: relative;
 
 		&__heading {
 			text-align: center;
@@ -62,74 +63,8 @@
 		}
 
 		&__nav {
-			text-align: center;
-			$item_size: 16px;
-			margin: $base_line_height 0;
-
-				&__wrap {
-					display: inline-block;
-					position: relative;
-					padding: 0 ( $item_size * 1.5 );
-				}
-
-				&__prevnext {
-
-					.owl-prev,
-					.owl-next {
-						position: absolute;
-						color: $separator_color;
-						transition: color 200ms;
-						cursor: pointer;
-
-							svg {
-								width: $item_size;
-								height: $item_size;
-							}
-
-							&:hover {
-								color: $highlight_color;
-							}
-					}
-					
-					.owl-prev {
-						left: 0;
-					}
-
-					.owl-next {
-						right: 0;
-					}
-
-				}
-
-				&__dots {
-					display: inline-block;
-
-						.owl-dot {
-							width: $item_size;
-							height: $item_size;
-							display: inline-block;
-							border: 1px solid $separator_color;
-							border-radius: 100%;
-							background: transparent;
-							margin: 0 ( $item_size / 2 );
-							transition-property: background-color, border-color;
-							transition-duration: 200ms;
-							cursor: pointer;
-
-								&.active {
-									background-color: $separator_color;
-
-										&:hover {
-											background-color: $highlight_color;
-										}
-								}
-
-								&:hover {
-									border-color: $highlight_color;
-								}
-						}
-
-				}
+			@import "modules/slider_pagination";
+			@include slider_pagination();
 		}
 
 }

@@ -77,20 +77,20 @@
 </section>
 
 
-<article class="home_text is-red">
+<article class="home_text is-red" role="main" itemscope itemtype="http://schema.org/Article">
 	<div class="width_wrap">
 
 		<div class="home_text__image">
-			<img src="sample_content/home_image_1.svg" class="is-svg" alt="" />
+			<img src="sample_content/home_image_1.svg" class="is-svg" alt="" itemprop="image" />
 		</div>
-		<div class="home_text__description">
-			<h1>Lorem ipsum ...</h1>
+		<div class="home_text__description" itemprop="description">
+			<h1 itemprop="name">Lorem ipsum ...</h1>
 
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi libero maxime natus quibusdam?
 				Adipisci aut expedita facere in laboriosam minus modi nesciunt. Aspernatur consectetur deleniti facilis
 				hic magnam tenetur.</p>
 
-			<a class="button" href="">Více o ...</a>
+			<a class="button" href="" itemprop="url">Více o ...</a>
 		</div>
 
 	</div>
@@ -142,8 +142,10 @@
 		<h2 class="products_slider__heading">Novinky v obchodě</h2>
 
 		<div class="products_slider__products">
-			<a class="products_slider__products__item" href="">
-				<img src="sample_content/product_1.svg" alt=""/>
+			<a class="products_slider__products__item" href="" itemscope itemtype="http://schema.org/Product">
+				<img src="sample_content/product_1.svg" alt="" itemprop="image"/>
+				<meta itemprop="url" content="www..."/>
+				<meta itemprop="name" content="Žirafa"/>
 			</a>
 			<a class="products_slider__products__item" href="">
 				<img src="sample_content/product_2.svg" alt=""/>
@@ -218,6 +220,80 @@
 	</div>
 </section>
 
+<section class="home_call_to_action">
+	<div class="width_wrap">
+
+		<a class="button is-important" href="">Jít nakupovat</a>
+
+	</div>
+</section>
+
+<section class="testimonials">
+
+	<h2 class="testimonials__heading">Zkušenosti zákazníků</h2>
+
+	<div class="testimonials__slider">
+		<div class="testimonials__slider__item" itemscope itemtype="http://schema.org/Review">
+			<img src="sample_content/testimonials-background-image.jpg" alt="" itemprop="image"/>
+
+			<div class="testimonials__slider__item__content">
+				<svg class="testimonials__slider__item__content__quote_before" aria-hidden="true"><use xlink:href="#svg-quotes_before"></use></svg>
+				<svg class="testimonials__slider__item__content__quote_after" aria-hidden="true"><use xlink:href="#svg-quotes_after"></use></svg>
+				<p itemprop="reviewBody">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur debitis dolore, earum eius,
+					eligendi facere fugiat harum in ipsum natus neque optio, perferendis quaerat ratione sunt tempora
+					tenetur velit vitae? eligendi facere fugiat harum in ipsum natus neque optio, perferendis quaerat ratione sunt tempora</p>
+				<!-- this is max lenght of text! -->
+				<p class="testimonials__slider__item__content__name" itemprop="creator" itemscope itemtype="http://schema.org/Person">
+					<strong itemprop="name">Jane Doe</strong>&nbsp;/&nbsp;<span itemprop="homeLocation">Praha</span>
+				</p>
+			</div>
+
+			<meta itemprop="itemreviewed" content="Pikte.cz"/>
+		</div>
+
+		<div class="testimonials__slider__item">
+			<img src="sample_content/testimonials-background-image.jpg" alt="" itemprop="image"/>
+
+			<div class="testimonials__slider__item__content">
+				<svg class="testimonials__slider__item__content__quote_before" aria-hidden="true"><use xlink:href="#svg-quotes_before"></use></svg>
+				<svg class="testimonials__slider__item__content__quote_after" aria-hidden="true"><use xlink:href="#svg-quotes_after"></use></svg>
+				<p itemprop="reviewBody">Lorem ipsum dolor sit amet, consecte</p>
+				<!-- this is max lenght of text! -->
+				<p class="testimonials__slider__item__content__name" itemprop="creator" itemscope itemtype="http://schema.org/Person">
+					<strong itemprop="name">Jane Doe</strong>&nbsp;/&nbsp;<span itemprop="homeLocation">Praha</span>
+				</p>
+			</div>
+
+			<meta itemprop="itemreviewed" content="Pikte.cz"/>
+		</div>
+
+		<div class="testimonials__slider__item">
+			<img src="sample_content/testimonials-background-image.jpg" alt="" itemprop="image"/>
+
+			<div class="testimonials__slider__item__content">
+				<svg class="testimonials__slider__item__content__quote_before" aria-hidden="true"><use xlink:href="#svg-quotes_before"></use></svg>
+				<svg class="testimonials__slider__item__content__quote_after" aria-hidden="true"><use xlink:href="#svg-quotes_after"></use></svg>
+				<p itemprop="reviewBody">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur debitis dolore, earum eius,
+					tenetur velit vitae? eligendi facere fugiat harum in ipsum natus neque optio, perferendis quaerat ratione sunt tempora</p>
+				<!-- this is max lenght of text! -->
+				<p class="testimonials__slider__item__content__name" itemprop="creator" itemscope itemtype="http://schema.org/Person">
+					<strong itemprop="name">Jane Doe</strong>&nbsp;/&nbsp;<span itemprop="homeLocation">Praha</span>
+				</p>
+			</div>
+
+			<meta itemprop="itemreviewed" content="Pikte.cz"/>
+		</div>
+
+	</div>
+
+	<div class="testimonials__nav">
+		<div class="testimonials__nav__wrap">
+			<div class="testimonials__nav__prevnext"></div>
+			<div class="testimonials__nav__dots"></div>
+		</div>
+	</div>
+
+</section>
 
 <footer class="main_footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 	<div class="width_wrap">
@@ -259,6 +335,7 @@
 <script src="js/libs/picturefill.js"></script>
 <script src="js/libs/owl.carousel.js"></script> <!-- jq -->
 <script src="js/products_slider.js"></script> <!-- jq, owl_caoursel -->
+<script src="js/testimonials.js"></script> <!-- jq, owl_caoursel -->
 
 
 <div id="fb-root"></div>

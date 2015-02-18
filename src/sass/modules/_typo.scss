@@ -85,6 +85,16 @@ blockquote {
 					border-color: darken( $highlight_color, 20% );
 				}
 		}
+
+		&.is-important {
+			color: $important_button_color;
+			border-color: $important_button_color;
+
+			&:hover {
+				color: $body_bg;
+				background-color: $important_button_color;
+			}
+		}
 }
 
 

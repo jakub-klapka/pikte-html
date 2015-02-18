@@ -133,3 +133,126 @@
 
 
 }
+
+.home_call_to_action {
+	text-align: center;
+	margin: $base_line_height 0;
+}
+
+.testimonials {
+	margin-top: $base_line_height * 2;
+	position: relative;
+
+	$max_height: 560px;
+	$breakpoint: ( $max_height / 2 ) * 3;
+	$long_text_breakpoint: 620px;
+
+		&__heading {
+			position: absolute;
+			left: 0;
+			right: 0;
+			text-align: center;
+			top: $base_line_height;
+			z-index: 100;
+
+			color: $body_bg;
+			font-weight: bold;
+			text-transform: uppercase;
+			font-size: 18px;
+
+				@include respond_to( 'max-width', $long_text_breakpoint ) {
+					top: 0;
+				}
+		}
+
+		&__slider {
+			z-index: 50;
+			position: relative;
+
+				&__item {
+					position: relative;
+					max-height: $max_height;
+					overflow: hidden;
+
+						@include respond_to('max-width', $breakpoint) {
+							height: $max_height;
+						}
+
+						img {
+							//Aspect ratio 3:2
+							display: block;
+							max-width: 100%;
+							height: auto;
+							transform: translateY(calc(-50% + #{( $max_height / 2 )}));
+
+							@include respond_to('max-width', $breakpoint) {
+								height: 100%;
+								width: auto;
+								max-width: none;
+								transform: translateX(calc(#{'-50% + 50vw'}));
+							}
+						}
+
+						&__content {
+							position: absolute;
+							top: 50%;
+							left: 50%;
+							width: calc( 100% - 100px ) ;
+							max-width: $page_max_width - 80px;
+							transform: translate( -50%, -50% );
+							color: $body_bg;
+							font-weight: 300;
+							font-size: 24px;
+							line-height: 36px;
+							text-align: center;
+
+								p {
+									text-align: inherit;
+								}
+
+								@include respond_to( 'max-width', $long_text_breakpoint ) {
+									font-size: 18px;
+									line-height: 24px;
+								};
+
+								&__quote_before,
+								&__quote_after {
+									$size: 32px;
+									width: $size;
+									height: $size;
+									color: $body_bg;
+									opacity: 0.2;
+									position: absolute;
+									top: $base_line_height;
+								}
+
+								&__quote_before {
+									left: -40px;
+								}
+
+								&__quote_after {
+									right: -40px;
+								}
+
+
+						}
+
+				}
+		}
+
+		&__nav {
+			@import "modules/slider_pagination";
+			@include slider_pagination();
+
+			position: absolute;
+			bottom: 30px;
+			z-index: 100;
+			left: $side_gutter;
+			right: $side_gutter;
+
+				@include respond_to( 'max-width', $long_text_breakpoint ) {
+					bottom: 0;
+				}
+		}
+
+}
