@@ -79,10 +79,21 @@
 
 				img {
 					display: inline-block;
+					margin-top: $base_line_height;
+
+						&.is-svg {
+							width: 250px;
+							height: 250px;
+						}
 
 						@include respond_to( 'home_text_wrap' ) {
 							width: 50%;
 							height: auto;
+
+								&.is-svg {
+									width: 50%;
+									height: auto;
+								}
 						}
 				}
 

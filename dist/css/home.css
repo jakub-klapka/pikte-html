@@ -96,9 +96,18 @@ Mixins
 }
 .home_text__image img {
   display: inline-block;
+  margin-top: 30px;
+}
+.home_text__image img.is-svg {
+  width: 250px;
+  height: 250px;
 }
 @media only screen and (max-width: 780px) {
   .home_text__image img {
+    width: 50%;
+    height: auto;
+  }
+  .home_text__image img.is-svg {
     width: 50%;
     height: auto;
   }
