@@ -1,4 +1,4 @@
-/* global jQuery */
+/* global jQuery, Modernizr */
 ( function( $ ){
 
 	var MobileMenu = {
@@ -89,7 +89,9 @@
 
 
 	$( function(){
-		MobileMenu.init();
+		if( Modernizr.flexbox ){
+			MobileMenu.init();
+		}
 	} );
 
 } )( jQuery );

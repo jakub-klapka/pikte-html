@@ -233,19 +233,20 @@
 	<h2 class="testimonials__heading">Zkušenosti zákazníků</h2>
 
 	<div class="testimonials__slider">
-		<div class="testimonials__slider__item" itemscope itemtype="http://schema.org/Review">
+
+		<div class="testimonials__slider__item">
 			<img src="sample_content/testimonials-background-image.jpg" alt="" itemprop="image"/>
 
 			<div class="testimonials__slider__item__content">
-				<svg class="testimonials__slider__item__content__quote_before" aria-hidden="true"><use xlink:href="#svg-quotes_before"></use></svg>
-				<svg class="testimonials__slider__item__content__quote_after" aria-hidden="true"><use xlink:href="#svg-quotes_after"></use></svg>
-				<p itemprop="reviewBody">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur debitis dolore, earum eius,
-					eligendi facere fugiat harum in ipsum natus neque optio, perferendis quaerat ratione sunt tempora
-					tenetur velit vitae? eligendi facere fugiat harum in ipsum natus neque optio, perferendis quaerat ratione sunt tempora</p>
-				<!-- this is max lenght of text! -->
-				<p class="testimonials__slider__item__content__name" itemprop="creator" itemscope itemtype="http://schema.org/Person">
-					<strong itemprop="name">Jane Doe</strong>&nbsp;/&nbsp;<span itemprop="homeLocation">Praha</span>
-				</p>
+				<div class="testimonials__slider__item__content__inner">
+					<svg class="testimonials__slider__item__content__inner__quote_before" aria-hidden="true"><use xlink:href="#svg-quotes_before"></use></svg>
+					<svg class="testimonials__slider__item__content__inner__quote_after" aria-hidden="true"><use xlink:href="#svg-quotes_after"></use></svg>
+					<p itemprop="reviewBody">Lorem ipsum dolor sit amet</p>
+					<!-- this is max lenght of text! -->
+					<p class="testimonials__slider__item__content__inner__name" itemprop="creator" itemscope itemtype="http://schema.org/Person">
+						<strong itemprop="name">Jane Doe</strong>&nbsp;/&nbsp;<span itemprop="homeLocation">Praha</span>
+					</p>
+				</div>
 			</div>
 
 			<meta itemprop="itemreviewed" content="Pikte.cz"/>
@@ -255,13 +256,15 @@
 			<img src="sample_content/testimonials-background-image.jpg" alt="" itemprop="image"/>
 
 			<div class="testimonials__slider__item__content">
-				<svg class="testimonials__slider__item__content__quote_before" aria-hidden="true"><use xlink:href="#svg-quotes_before"></use></svg>
-				<svg class="testimonials__slider__item__content__quote_after" aria-hidden="true"><use xlink:href="#svg-quotes_after"></use></svg>
-				<p itemprop="reviewBody">Lorem ipsum dolor sit amet, consecte</p>
-				<!-- this is max lenght of text! -->
-				<p class="testimonials__slider__item__content__name" itemprop="creator" itemscope itemtype="http://schema.org/Person">
-					<strong itemprop="name">Jane Doe</strong>&nbsp;/&nbsp;<span itemprop="homeLocation">Praha</span>
-				</p>
+				<div class="testimonials__slider__item__content__inner">
+					<svg class="testimonials__slider__item__content__inner__quote_before" aria-hidden="true"><use xlink:href="#svg-quotes_before"></use></svg>
+					<svg class="testimonials__slider__item__content__inner__quote_after" aria-hidden="true"><use xlink:href="#svg-quotes_after"></use></svg>
+					<p itemprop="reviewBody">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dignissimos dolorum eligendi inventore nesciunt nobis obcaecati repellat repellendus voluptatem voluptatibus. At eligendi fugiat iusto, laboriosam molestiae nisi officia repellat sapiente.</p>
+					<!-- this is max lenght of text! -->
+					<p class="testimonials__slider__item__content__inner__name" itemprop="creator" itemscope itemtype="http://schema.org/Person">
+						<strong itemprop="name">Jane Doe</strong>&nbsp;/&nbsp;<span itemprop="homeLocation">Praha</span>
+					</p>
+				</div>
 			</div>
 
 			<meta itemprop="itemreviewed" content="Pikte.cz"/>
@@ -271,18 +274,21 @@
 			<img src="sample_content/testimonials-background-image.jpg" alt="" itemprop="image"/>
 
 			<div class="testimonials__slider__item__content">
-				<svg class="testimonials__slider__item__content__quote_before" aria-hidden="true"><use xlink:href="#svg-quotes_before"></use></svg>
-				<svg class="testimonials__slider__item__content__quote_after" aria-hidden="true"><use xlink:href="#svg-quotes_after"></use></svg>
-				<p itemprop="reviewBody">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur debitis dolore, earum eius,
-					tenetur velit vitae? eligendi facere fugiat harum in ipsum natus neque optio, perferendis quaerat ratione sunt tempora</p>
-				<!-- this is max lenght of text! -->
-				<p class="testimonials__slider__item__content__name" itemprop="creator" itemscope itemtype="http://schema.org/Person">
-					<strong itemprop="name">Jane Doe</strong>&nbsp;/&nbsp;<span itemprop="homeLocation">Praha</span>
-				</p>
+				<div class="testimonials__slider__item__content__inner">
+					<svg class="testimonials__slider__item__content__inner__quote_before" aria-hidden="true"><use xlink:href="#svg-quotes_before"></use></svg>
+					<svg class="testimonials__slider__item__content__inner__quote_after" aria-hidden="true"><use xlink:href="#svg-quotes_after"></use></svg>
+					<p itemprop="reviewBody">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad alias aliquam blanditiis dolorum ducimus eveniet</p>
+					<!-- this is max lenght of text! -->
+					<p class="testimonials__slider__item__content__inner__name" itemprop="creator" itemscope itemtype="http://schema.org/Person">
+						<strong itemprop="name">Jane Doe</strong>&nbsp;/&nbsp;<span itemprop="homeLocation">Praha</span>
+					</p>
+				</div>
 			</div>
 
 			<meta itemprop="itemreviewed" content="Pikte.cz"/>
 		</div>
+
+
 
 	</div>
 
@@ -326,9 +332,10 @@
 </footer>
 
 
+<script src="js/libs/modernizr.js"></script>
 <script src="js/libs/jquery-2.1.3.js"></script>
 <script src="js/libs/velocity.js"></script><!-- jq -->
-<script src="js/mobile_menu.js"></script> <!-- jq, velocity -->
+<script src="js/mobile_menu.js"></script> <!-- jq, velocity, modernizr -->
 <script src="js/footer_menu.js"></script> <!-- jq -->
 
 <!-- Home: -->

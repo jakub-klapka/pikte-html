@@ -720,6 +720,14 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+.no-flexbox .main_header .width_wrap {
+  text-align: justify;
+}
+.no-flexbox .main_header .width_wrap::after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+}
 .main_header__logo {
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 auto;
@@ -735,6 +743,10 @@ body {
 .is-underflowed .main_header__logo__image {
   color: #FFF;
 }
+.no-flexbox .main_header__logo {
+  margin-top: 25px;
+  display: inline-block;
+}
 .main_header__menu_section {
   display: -webkit-box;
   display: -webkit-flex;
@@ -745,6 +757,10 @@ body {
       -ms-flex: 1 0 auto;
           flex: 1 0 auto;
   height: 80%;
+}
+.no-flexbox .main_header__menu_section {
+  display: inline-block;
+  vertical-align: middle;
 }
 .menu_wrapped .main_header__menu_section {
   display: none;
@@ -786,6 +802,9 @@ body {
           justify-content: flex-end;
   height: 100%;
 }
+.no-flexbox .main_header__menu_section__nav {
+  display: inline-block;
+}
 .menu_wrapped .main_header__menu_section__nav {
   height: auto;
 }
@@ -798,6 +817,9 @@ body {
   height: 100%;
   padding-right: 25px;
 }
+.no-flexbox .main_header__menu_section__nav__ul {
+  display: inline-block;
+}
 .menu_wrapped .main_header__menu_section__nav__ul {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -809,6 +831,10 @@ body {
 }
 .main_header__menu_section__nav__ul__item {
   height: 100%;
+}
+.no-flexbox .main_header__menu_section__nav__ul__item {
+  display: inline-block;
+  height: 50%;
 }
 .menu_wrapped .main_header__menu_section__nav__ul__item {
   height: auto;
@@ -828,6 +854,9 @@ body {
   padding: 0 25px;
   color: #202020;
   text-transform: uppercase;
+}
+.no-flexbox .main_header__menu_section__nav__ul__item a {
+  display: inline-block;
 }
 .is-underflowed .main_header__menu_section__nav__ul__item a {
   color: #FFF;
@@ -879,6 +908,7 @@ body {
           align-items: center;
   color: #00bfc0;
   text-decoration: none;
+  font-size: 14px;
 }
 .is-underflowed .main_header__menu_section__cart_info {
   color: #FFF;
