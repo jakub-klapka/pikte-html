@@ -1,0 +1,58 @@
+@import "global";
+
+.portfolio {
+	$three_products_wrap: 1236px;
+	$two_products_wrap: 956px;
+	$one_products_wrap: 674px;
+
+	margin: $base_line_height*2 0;
+
+		.width_wrap {
+			display: flex;
+			flex-wrap: wrap;
+
+				@include respond_to( 'max-width', $one_products_wrap ) {
+					flex-direction: column;
+					align-items: center;
+				}
+		}
+
+		&__item {
+			flex: 0 0 auto;
+
+				@mixin portfolio_margins( $columns, $center: false ) {
+					@if( $center ) {
+						margin-left: calc( ( 100% - #{( $product_thumb_size * $columns )} ) / #{( $columns * 2 )} );
+						margin-right: calc( ( 100% - #{( $product_thumb_size * $columns )} ) / #{( $columns * 2 )} );
+						margin-bottom: calc( ( ( 100% - #{( $product_thumb_size * $columns )} ) / #{( $columns * 2 )} ) * 2 );
+					}
+					@else {
+						margin-right: calc( ( 100% - #{( $product_thumb_size * $columns )} ) / #{( $columns - 1 )} );
+						margin-bottom: calc( ( 100% - #{( $product_thumb_size * $columns )} ) / #{( $columns - 1 )} );
+
+							&:nth-of-type( #{$columns}n ) {
+								margin-right: 0;
+							}
+					}
+
+				}
+
+				@include respond_to( 'min-width', ( $three_products_wrap + 1 ) ){
+					@include portfolio_margins( 4 );
+				}
+
+				@media only screen and ( max-width: $three_products_wrap ) and ( min-width: ( $two_products_wrap + 1 ) ){
+					@include portfolio_margins( 3 );
+				}
+
+				@media only screen and ( max-width: $two_products_wrap ) and ( min-width: ( $one_products_wrap + 1 ) ){
+					@include portfolio_margins( 2, true );
+				}
+
+				@include respond_to( 'max-width', $one_products_wrap ) {
+					margin-bottom: $base_line_height;
+				}
+
+		}
+
+}

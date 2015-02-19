@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="cs" itemscope itemtype="http://schema.org/WebPage">
+<head>
+	<meta charset="UTF-8">
+	<title itemprop="name">PIKTE</title>
+
+	<!-- https://www.google.com/fonts#UsePlace:use/Collection:Open+Sans:300italic,400italic,700italic,400,700,300 -->
+	<link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,700,300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="../dist/css/layout.css"/>
+	<link rel="stylesheet" href="../dist/css/portfolio.css"/>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script>
+		var ajax = new XMLHttpRequest();
+		ajax.open("GET", "../dist/images/svg_layout.svg", true);
+		ajax.send();
+		ajax.onload = function(e) {
+			var div = document.createElement("div");
+			div.style.display = 'none';
+			div.innerHTML = ajax.responseText;
+			document.body.insertBefore(div, document.body.childNodes[0]);
+		}
+	</script>
+
+</head>
+<body>
+
+<header class="main_header menu_open" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+	<div class="width_wrap">
+
+		<a class="main_header__logo" href="" itemtype="name url">
+			<svg class="main_header__logo__image"><use xlink:href="#svg-logo"></use></svg>
+		</a>
+
+		<div class="main_header__menu_section" id="main_menu">
+			<nav class="main_header__menu_section__nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+				<ul class="main_header__menu_section__nav__ul">
+					<li class="main_header__menu_section__nav__ul__item"><a href="" itemprop="name url"><span>Naše práce</span></a></li>
+					<li class="main_header__menu_section__nav__ul__item is-active"><a href="" itemprop="name url"><span>Portfolio</span></a></li>
+					<li class="main_header__menu_section__nav__ul__item"><a href="" itemprop="name url"><span>Obchod</span></a></li>
+					<li class="main_header__menu_section__nav__ul__item"><a href="" itemprop="name url"><span>Na zakázku</span></a></li>
+					<li class="main_header__menu_section__nav__ul__item"><a href="" itemprop="name url"><span>O nás</span></a></li>
+				</ul>
+			</nav>
+
+			<a href="" class="main_header__menu_section__cart_info">
+				<svg class="main_header__menu_section__cart_info__icon"><use xlink:href="#svg-shopping_cart"></use></svg>
+				<div class="main_header__menu_section__cart_info__text">2ks / 1 234 Kč</div>
+			</a>
+		</div>
+
+
+		<button class="main_header__menu_button" aria-controls="main_menu">
+			<svg><use xlink:href="#svg-menu"></use></svg>
+		</button>
+
+
+	</div>
+</header>
+
+<article class="portfolio" role="main" itemprop="mainContentOfPage">
+	<div class="width_wrap">
+
+		<a class="portfolio__item product_thumb" href="" itemscope itemtype="http://schema.org/Product">
+			<img src="sample_content/product_1.svg" alt="" itemprop="image"/>
+			<meta itemprop="url" content="www..."/>
+			<meta itemprop="name" content="Žirafa"/>
+		</a>
+
+		<a class="portfolio__item product_thumb" href="">
+			<img src="sample_content/product_2.svg" alt=""/>
+		</a>
+		<a class="portfolio__item product_thumb" href="">
+			<img src="sample_content/product_3.svg" alt=""/>
+		</a>
+		<a class="portfolio__item product_thumb" href="">
+			<img src="sample_content/product_4.svg" alt=""/>
+		</a>
+		<a class="portfolio__item product_thumb" href="">
+			<img src="sample_content/product_2.svg" alt=""/>
+		</a>
+		<a class="portfolio__item product_thumb" href="">
+			<img src="sample_content/product_3.svg" alt=""/>
+		</a>
+		<a class="portfolio__item product_thumb" href="">
+			<img src="sample_content/product_1.svg" alt=""/>
+		</a>
+		<a class="portfolio__item product_thumb" href="">
+			<img src="sample_content/product_1.svg" alt=""/>
+		</a>
+		<a class="portfolio__item product_thumb" href="">
+			<img src="sample_content/product_2.svg" alt=""/>
+		</a>
+		<a class="portfolio__item product_thumb" href="">
+			<img src="sample_content/product_3.svg" alt=""/>
+		</a>
+		<a class="portfolio__item product_thumb" href="">
+			<img src="sample_content/product_4.svg" alt=""/>
+		</a>
+		<a class="portfolio__item product_thumb" href="">
+			<img src="sample_content/product_2.svg" alt=""/>
+		</a>
+		<a class="portfolio__item product_thumb" href="">
+			<img src="sample_content/product_3.svg" alt=""/>
+		</a>
+		<a class="portfolio__item product_thumb" href="">
+			<img src="sample_content/product_1.svg" alt=""/>
+		</a>
+		<a class="portfolio__item product_thumb" href="">
+			<img src="sample_content/product_1.svg" alt=""/>
+		</a>
+		<a class="portfolio__item product_thumb" href="">
+			<img src="sample_content/product_2.svg" alt=""/>
+		</a>
+		<a class="portfolio__item product_thumb" href="">
+			<img src="sample_content/product_3.svg" alt=""/>
+		</a>
+		<a class="portfolio__item product_thumb" href="">
+			<img src="sample_content/product_4.svg" alt=""/>
+		</a>
+		<a class="portfolio__item product_thumb" href="">
+			<img src="sample_content/product_2.svg" alt=""/>
+		</a>
+		<a class="portfolio__item product_thumb" href="">
+			<img src="sample_content/product_3.svg" alt=""/>
+		</a>
+		<a class="portfolio__item product_thumb" href="">
+			<img src="sample_content/product_1.svg" alt=""/>
+		</a>
+
+
+
+
+	</div>
+</article>
+
+
+<footer class="main_footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+	<div class="width_wrap">
+
+		<div class="main_footer__copy">
+
+			<div class="main_footer__copy__contact">
+				<div class="fb-like main_footer__copy__contact__fb" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-action="like" data-show-faces="false" data-share="true"></div>
+				<a href="" class="main_footer__copy__contact__mail">
+					<svg class="main_footer__copy__contact__mail__icon"><use xlink:href="#svg-mail"></use></svg>
+					info@pikte.cz
+				</a>
+			</div>
+
+			<div class="main_footer__copy__copyright">
+				<strong>&copy;<span itemprop="copyrightYear">2014</span> Pikte. Všechna práva vyhrazena.</strong> Design and code by <a href="" itemprop="creator">Lumiart.cz</a>
+			</div>
+
+		</div>
+
+		<nav class="main_footer__menu" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+			<ul class="main_footer__menu__ul">
+				<li class="main_footer__menu__ul__item"><a href="" itemprop="name url">Obchodní podmínky</a></li>
+				<li class="main_footer__menu__ul__item"><a href="" itemprop="name url">F.A.Q.</a></li>
+				<li class="main_footer__menu__ul__item"><a href="" itemprop="name url">O Nás</a></li>
+			</ul>
+		</nav>
+
+	</div>
+</footer>
+
+
+<script src="js/libs/modernizr.js"></script>
+<script src="js/libs/jquery-2.1.3.js"></script>
+<script src="js/libs/velocity.js"></script><!-- jq -->
+<script src="js/mobile_menu.js"></script> <!-- jq, velocity, modernizr -->
+<script src="js/footer_menu.js"></script> <!-- jq -->
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	js.src = "//connect.facebook.net/cs_CZ/sdk.js#xfbml=1&version=v2.0";
+	fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+</body>
+</html>

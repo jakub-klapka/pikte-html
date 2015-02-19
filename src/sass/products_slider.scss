@@ -22,44 +22,6 @@
 
 		&__products {
 
-				&__item {
-					$size: 280px;
-					display: flex;
-					width: $size;
-					height: $size;
-					border: 1px solid $separator_color;
-					align-items: center;
-					justify-content: center;
-					position: relative;
-
-						img {
-							display: block;
-							width: 190px;
-							height: 190px;
-						}
-
-						&::after {
-							//hover glow
-							content: '';
-							position: absolute;
-							$margin: 15px;
-							left: $margin;
-							right: $margin;
-							top: $margin;
-							bottom: $margin;
-							border: 1px solid $highlight_color;
-							opacity: 0;
-							transition: opacity 200ms;
-						}
-
-						&:hover,
-						&:active {
-							&::after {
-								opacity: 1;
-							}
-						}
-				}
-
 		}
 
 		&__nav {
