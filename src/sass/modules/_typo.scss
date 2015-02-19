@@ -62,6 +62,8 @@ blockquote {
 	font-size: 14px;
 	transition-property: background-color, color, border-color;
 	transition-duration: 200ms;
+	color: $highlight_color;
+	background: transparent;
 
 		&:hover {
 			color: $body_bg;

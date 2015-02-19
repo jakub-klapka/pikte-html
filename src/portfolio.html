@@ -60,79 +60,92 @@
 </header>
 
 <article class="portfolio" role="main" itemprop="mainContentOfPage">
-	<div class="width_wrap">
+	<div class="width_wrap" id="products_loading__container">
 
-		<a class="portfolio__item product_thumb" href="" itemscope itemtype="http://schema.org/Product">
-			<img src="sample_content/product_1.svg" alt="" itemprop="image"/>
-			<meta itemprop="url" content="www..."/>
-			<meta itemprop="name" content="Žirafa"/>
-		</a>
+		<script type="text/template" id="products_template">
+			<a class="portfolio__products_container__item product_thumb" href="{{url}}" itemscope itemtype="http://schema.org/Product">
+				<img src="{{img_src}}" alt="{{img_alt}}" itemprop="image"/>
+				<meta itemprop="url" content="{{url}}"/>
+				<meta itemprop="name" content="{{name}}"/>
+			</a>
+		</script>
 
-		<a class="portfolio__item product_thumb" href="">
-			<img src="sample_content/product_2.svg" alt=""/>
-		</a>
-		<a class="portfolio__item product_thumb" href="">
-			<img src="sample_content/product_3.svg" alt=""/>
-		</a>
-		<a class="portfolio__item product_thumb" href="">
-			<img src="sample_content/product_4.svg" alt=""/>
-		</a>
-		<a class="portfolio__item product_thumb" href="">
-			<img src="sample_content/product_2.svg" alt=""/>
-		</a>
-		<a class="portfolio__item product_thumb" href="">
-			<img src="sample_content/product_3.svg" alt=""/>
-		</a>
-		<a class="portfolio__item product_thumb" href="">
-			<img src="sample_content/product_1.svg" alt=""/>
-		</a>
-		<a class="portfolio__item product_thumb" href="">
-			<img src="sample_content/product_1.svg" alt=""/>
-		</a>
-		<a class="portfolio__item product_thumb" href="">
-			<img src="sample_content/product_2.svg" alt=""/>
-		</a>
-		<a class="portfolio__item product_thumb" href="">
-			<img src="sample_content/product_3.svg" alt=""/>
-		</a>
-		<a class="portfolio__item product_thumb" href="">
-			<img src="sample_content/product_4.svg" alt=""/>
-		</a>
-		<a class="portfolio__item product_thumb" href="">
-			<img src="sample_content/product_2.svg" alt=""/>
-		</a>
-		<a class="portfolio__item product_thumb" href="">
-			<img src="sample_content/product_3.svg" alt=""/>
-		</a>
-		<a class="portfolio__item product_thumb" href="">
-			<img src="sample_content/product_1.svg" alt=""/>
-		</a>
-		<a class="portfolio__item product_thumb" href="">
-			<img src="sample_content/product_1.svg" alt=""/>
-		</a>
-		<a class="portfolio__item product_thumb" href="">
-			<img src="sample_content/product_2.svg" alt=""/>
-		</a>
-		<a class="portfolio__item product_thumb" href="">
-			<img src="sample_content/product_3.svg" alt=""/>
-		</a>
-		<a class="portfolio__item product_thumb" href="">
-			<img src="sample_content/product_4.svg" alt=""/>
-		</a>
-		<a class="portfolio__item product_thumb" href="">
-			<img src="sample_content/product_2.svg" alt=""/>
-		</a>
-		<a class="portfolio__item product_thumb" href="">
-			<img src="sample_content/product_3.svg" alt=""/>
-		</a>
-		<a class="portfolio__item product_thumb" href="">
-			<img src="sample_content/product_1.svg" alt=""/>
-		</a>
+		<div class="portfolio__products_container">
 
+			<a class="portfolio__products_container__item product_thumb" href="" itemscope itemtype="http://schema.org/Product">
+				<img src="sample_content/product_1.svg" alt="" itemprop="image"/>
+				<meta itemprop="url" content="www..."/>
+				<meta itemprop="name" content="Žirafa"/>
+			</a>
 
+			<a class="portfolio__products_container__item product_thumb" href="">
+				<img src="sample_content/product_2.svg" alt=""/>
+			</a>
+			<a class="portfolio__products_container__item product_thumb" href="">
+				<img src="sample_content/product_3.svg" alt=""/>
+			</a>
+			<a class="portfolio__products_container__item product_thumb" href="">
+				<img src="sample_content/product_4.svg" alt=""/>
+			</a>
+			<a class="portfolio__products_container__item product_thumb" href="">
+				<img src="sample_content/product_2.svg" alt=""/>
+			</a>
+			<a class="portfolio__products_container__item product_thumb" href="">
+				<img src="sample_content/product_3.svg" alt=""/>
+			</a>
+			<a class="portfolio__products_container__item product_thumb" href="">
+				<img src="sample_content/product_1.svg" alt=""/>
+			</a>
+			<a class="portfolio__products_container__item product_thumb" href="">
+				<img src="sample_content/product_1.svg" alt=""/>
+			</a>
+			<a class="portfolio__products_container__item product_thumb" href="">
+				<img src="sample_content/product_2.svg" alt=""/>
+			</a>
+			<a class="portfolio__products_container__item product_thumb" href="">
+				<img src="sample_content/product_3.svg" alt=""/>
+			</a>
+			<a class="portfolio__products_container__item product_thumb" href="">
+				<img src="sample_content/product_4.svg" alt=""/>
+			</a>
+			<a class="portfolio__products_container__item product_thumb" href="">
+				<img src="sample_content/product_2.svg" alt=""/>
+			</a>
+			<a class="portfolio__products_container__item product_thumb" href="">
+				<img src="sample_content/product_3.svg" alt=""/>
+			</a>
+			<a class="portfolio__products_container__item product_thumb" href="">
+				<img src="sample_content/product_1.svg" alt=""/>
+			</a>
+			<a class="portfolio__products_container__item product_thumb" href="">
+				<img src="sample_content/product_1.svg" alt=""/>
+			</a>
+			<a class="portfolio__products_container__item product_thumb" href="">
+				<img src="sample_content/product_2.svg" alt=""/>
+			</a>
+			<a class="portfolio__products_container__item product_thumb" href="">
+				<img src="sample_content/product_3.svg" alt=""/>
+			</a>
+			<a class="portfolio__products_container__item product_thumb" href="">
+				<img src="sample_content/product_4.svg" alt=""/>
+			</a>
+			<a class="portfolio__products_container__item product_thumb" href="">
+				<img src="sample_content/product_2.svg" alt=""/>
+			</a>
+			<a class="portfolio__products_container__item product_thumb" href="">
+				<img src="sample_content/product_3.svg" alt=""/>
+			</a>
 
+		</div>
+
+		<button class="button portfolio__load_more">
+			Načíst další produkty
+			<svg aria-hidden="true" class="portfolio__load_more__arrow"><use xlink:href="#svg-arrow_down"></use></svg>
+			<div aria-hidden="true" class="portfolio__load_more__spinner"></div>
+		</button>
 
 	</div>
+
 </article>
 
 
@@ -172,6 +185,16 @@
 <script src="js/libs/velocity.js"></script><!-- jq -->
 <script src="js/mobile_menu.js"></script> <!-- jq, velocity, modernizr -->
 <script src="js/footer_menu.js"></script> <!-- jq -->
+
+<!-- Products: -->
+<script>
+	var LumiProductsLoading = {
+		request_url: 'products.json'
+	};
+</script>
+<script src="js/products_loading.js"></script> <!-- jq -->
+
+
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
