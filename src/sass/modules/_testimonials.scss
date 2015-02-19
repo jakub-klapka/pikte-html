@@ -32,78 +32,78 @@
 
 				&__item {
 					position: relative;
-					max-height: $max_height;
+					height: $max_height;
 					width: 100%;
 					overflow: hidden;
+					display: flex;
+					justify-content: center;
+					align-items: center;
 
-						@include respond_to('max-width', $breakpoint) {
-							height: $max_height;
-						}
-
-						img {
-							//Aspect ratio 3:2
-							display: block;
-							max-width: 100%;
+						&__image {
+							position: absolute;
+							width: 100%;
 							height: auto;
-							transform: translateY(-50%) translateY( ( $max_height / 2 ) );
+							left: 0;
+							top: 50%;
+							transform: translateY( -50% );
 
-							@include respond_to('max-width', $breakpoint) {
-								height: 100%;
-								width: auto;
-								max-width: none;
-								transform: translateX(-50%) translateX(50vw); //IE
-								transform: translateX( calc( #{'-50% + 50vw'} ) ); //iOS
-							}
+								@include respond_to( 'max-width', 840px ) {
+									height: 100%;
+									width: auto;
+									top: 0;
+									left: 50%;
+									transform: translateX( -50% );
+								}
 						}
 
 						&__content {
-							position: absolute;
-							top: 50%;
-							left: 50%;
-							width: calc( 100% - 100px );
-							max-width: $page_max_width - 80px;
-							transform: translate( -50%, -50% );
-							display: flex;
-							justify-content: center;
+							$border_gutter: 100px;
+							color: $body_bg;
+							font-weight: 300;
+							font-size: 24px;
+							line-height: 36px;
+							text-align: center;
+							width: auto;
+							position: relative;
+							max-width: ( $page_max_width - $border_gutter );
 
-								&__inner {
+								.no-flexbox & {
+									position: absolute;
+									left: 50%;
+									top: 50%;
+									transform: translate( -50%, -50% );
+								}
+
+								@include respond_to( 'max-width', ( $page_max_width + $border_gutter ) ){
+									max-width: calc( 100% - #{$border_gutter} );
+								}
+
+								p {
+									text-align: inherit;
+								}
+
+								@include respond_to( 'max-width', $long_text_breakpoint ) {
+									font-size: 18px;
+									line-height: 24px;
+								};
+
+								&__quote_before,
+								&__quote_after {
+									$size: 32px;
+									width: $size;
+									height: $size;
 									color: $body_bg;
-									font-weight: 300;
-									font-size: 24px;
-									line-height: 36px;
-									text-align: center;
-									width: auto;
-									position: relative;
-									max-width: 100%;
+									opacity: 0.2;
+									position: absolute;
+									top: $base_line_height;
+								}
 
-										p {
-											text-align: inherit;
-										}
+								&__quote_before {
+									left: -40px;
+								}
 
-										@include respond_to( 'max-width', $long_text_breakpoint ) {
-											font-size: 18px;
-											line-height: 24px;
-										};
-
-										&__quote_before,
-										&__quote_after {
-											$size: 32px;
-											width: $size;
-											height: $size;
-											color: $body_bg;
-											opacity: 0.2;
-											position: absolute;
-											top: $base_line_height;
-										}
-
-										&__quote_before {
-											left: -40px;
-										}
-
-										&__quote_after {
-											right: -40px;
-										}
-
+								&__quote_after {
+									right: -40px;
 								}
 
 						}
