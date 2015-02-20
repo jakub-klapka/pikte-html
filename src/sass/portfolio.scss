@@ -11,47 +11,62 @@
 			display: flex;
 			flex-wrap: wrap;
 
-			@include respond_to('max-width', $one_products_wrap) {
-				flex-direction: column;
-				align-items: center;
-			}
+				.no-flexbox & {
+					font-size: 0;
 
-			&__item {
-				flex: 0 0 auto;
-
-				@mixin portfolio_margins($columns, $center: false) {
-					@if ($center) {
-						margin-left: calc((100% - #{( $product_thumb_size * $columns )}) / #{( $columns * 2 )});
-						margin-right: calc((100% - #{( $product_thumb_size * $columns )}) / #{( $columns * 2 )});
-						margin-bottom: calc(((100% - #{( $product_thumb_size * $columns )}) / #{( $columns * 2 )}) * 2);
-					} @else {
-						margin-right: calc((100% - #{( $product_thumb_size * $columns )}) / #{( $columns - 1 )});
-						margin-bottom: calc((100% - #{( $product_thumb_size * $columns )}) / #{( $columns - 1 )});
-
-						&:nth-of-type( #{$columns}n ) {
-							margin-right: 0;
+						& > * {
+							font-size: 1rem;
 						}
-					}
-
-				}
-
-				@include respond_to('min-width', ($three_products_wrap + 1)) {
-					@include portfolio_margins(4);
-				}
-
-				@media only screen and (max-width: $three_products_wrap) and (min-width: ($two_products_wrap + 1)) {
-					@include portfolio_margins(3);
-				}
-
-				@media only screen and (max-width: $two_products_wrap) and (min-width: ($one_products_wrap + 1)) {
-					@include portfolio_margins(2, true);
 				}
 
 				@include respond_to('max-width', $one_products_wrap) {
-					margin-bottom: $base_line_height;
+					flex-direction: column;
+					align-items: center;
 				}
 
-			}
+				&__item {
+					flex: 0 0 auto;
+
+						.no-flexbox & {
+							display: inline-block;
+							width: 25%;
+							vertical-align: top;
+							margin: 0;
+						}
+
+						@mixin portfolio_margins($columns, $center: false) {
+							@if ($center) {
+								margin-left: calc((100% - #{( $product_thumb_size * $columns )}) / #{( $columns * 2 )});
+								margin-right: calc((100% - #{( $product_thumb_size * $columns )}) / #{( $columns * 2 )});
+								margin-bottom: calc(((100% - #{( $product_thumb_size * $columns )}) / #{( $columns * 2 )}) * 2);
+							} @else {
+								margin-right: calc(((100% - #{( $product_thumb_size * $columns )}) / #{( $columns - 1 )}) - 1px );
+								margin-bottom: calc(((100% - #{( $product_thumb_size * $columns )}) / #{( $columns - 1 )}) - 1px );
+
+								&:nth-of-type( #{$columns}n ) {
+									margin-right: 0;
+								}
+							}
+
+						}
+
+						@include respond_to('min-width', ($three_products_wrap + 1)) {
+							@include portfolio_margins(4);
+						}
+
+						@media only screen and (max-width: $three_products_wrap) and (min-width: ($two_products_wrap + 1)) {
+							@include portfolio_margins(3);
+						}
+
+						@media only screen and (max-width: $two_products_wrap) and (min-width: ($one_products_wrap + 1)) {
+							@include portfolio_margins(2, true);
+						}
+
+						@include respond_to('max-width', $one_products_wrap) {
+							margin-bottom: $base_line_height;
+						}
+
+				}
 
 		}
 
@@ -61,13 +76,13 @@
 
 				&.is-disabled {
 					cursor: auto;
-					background: $separator_color;
-					border-color: $separator_color;
-					color: $base_text_color;
+					background: $highlight_hover_color;
+					border-color: $highlight_hover_color;
+					color: $body_bg;
 				}
 
 				&__arrow {
-					$size: 30px;
+					$size: 20px;
 					width: $size;
 					height: $size;
 					vertical-align: middle;
@@ -85,10 +100,10 @@
 					margin-left: 5px;
 					font-size: 2px;
 					position: relative;
-					border-top: 1.1em solid $base_text_color;
-					border-right: 1.1em solid $base_text_color;
-					border-bottom: 1.1em solid $base_text_color;
-					border-left: 1.1em solid #ffffff;
+					border-top: 1.1em solid $body_bg;
+					border-right: 1.1em solid $body_bg;
+					border-bottom: 1.1em solid $body_bg;
+					border-left: 1.1em solid $highlight_hover_color;
 					animation: load8 1.1s infinite linear;
 
 						.is-disabled & {

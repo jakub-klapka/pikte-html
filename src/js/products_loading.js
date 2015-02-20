@@ -24,6 +24,7 @@
 		loadRequested: function() {
 
 			if( this.loading ) return;
+			this.loading = true;
 
 			this.load_button.addClass( 'is-disabled' );
 
@@ -38,6 +39,7 @@
 			load_deffered.done( function(){
 				t.current_page++;
 				t.load_button.removeClass( 'is-disabled' );
+				t.loading = false;
 			} );
 
 		},
@@ -60,25 +62,32 @@
 
 		fillInData: function( xhr, deffered ) {
 
-			var data = xhr.responseJSON;
+			var response = xhr.responseJSON;
 
-			var to_append = [];
+			if( response.status === 'ok' || response.status === 'last_page' ) {
+				var to_append = [];
+				var t = this;
+				$.each( response.data, function( index, item ){
 
-			var t = this;
-			$.each( data, function( index, item ){
+					var item_html = t.product_template;
+					item_html = item_html.replace( /\{\{url\}\}/g, item.url )
+						.replace( /\{\{img_src\}\}/g, item.img_src )
+						.replace( /\{\{img_alt\}\}/g, item.img_alt )
+						.replace( /\{\{name\}\}/g, item.name );
 
-				var item_html = t.product_template;
-				item_html = item_html.replace( /\{\{url\}\}/g, item.url )
-					.replace( /\{\{img_src\}\}/g, item.img_src )
-					.replace( /\{\{img_alt\}\}/g, item.img_alt )
-					.replace( /\{\{name\}\}/g, item.name );
+					to_append.push( $( item_html ) );
 
-				to_append.push( $( item_html ) );
+				} );
+				this.container.append( to_append );
 
-			} );
-
-			this.container.append( to_append );
-
+				if( response.status === 'last_page' ) {
+					this.load_button.remove();
+				}
+			}
+			if( response.status === 'error' ){
+				console.log( 'Loading error: ' + response.error );
+				alert( 'Chyba načítání, prosím kontaktujte nás a my se na to mrkneme.' );
+			}
 
 			deffered.resolve();
 
